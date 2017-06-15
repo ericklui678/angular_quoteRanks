@@ -1,0 +1,13 @@
+.author{
+    margin-left: 135px;
+}
+input#submit{
+    margin-left: 250px;
+}
+.red{
+    display: inline;
+    color: red;
+}
+.app-list{
+    border: 3px solid red;
+}

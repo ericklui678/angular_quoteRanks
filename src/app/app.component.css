@@ -1,0 +1,9 @@
+.app-component{
+    border: 3px solid black;
+}
+.app-form{
+    border: 3px solid blue;
+}
+.app-list{
+    border: 3px solid red;
+}

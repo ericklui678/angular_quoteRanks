@@ -1,0 +1,8 @@
+<div class='box' *ngFor='let quote of quoteList'>
+  <p>"{{ quote.quote }}"</p>
+  <p>- {{ quote.author }}</p>
+  <p>{{ quote.rating }}</p>
+  <button (click)='voteUp(quote)'>Vote Up</button>
+  <button (click)='voteDown(quote)'>Vote Down</button>
+  <button (click)='delete(quote)'>Delete</button>
+</div>

@@ -1,0 +1,35 @@
+<h1>Add a Quote</h1>
+<form (submit)="onSubmit()" #regForm='ngForm'>
+  <textarea name="text" rows="8" cols="50"
+    [(ngModel)]='quote.quote'
+    #text='ngModel'
+    required
+    minlength='4'
+    maxlength='100'>
+  </textarea>
+  <div class='red' *ngIf='text.errors && (text.touched || regForm.submitted)'>
+    <span *ngIf='text.errors.required'>Quote is required</span>
+    <span *ngIf='text.errors.minlength'>Quote must be at least 4 characters</span>
+  </div><br>
+
+  <span class='author'>Author: <input type="text" name="author"
+  [(ngModel)]='quote.author'
+  #author='ngModel'
+  required
+  minlength='1'
+  maxlength='20'></span>
+  <div class='red' *ngIf='author.errors && (author.touched || regForm.submitted)'>
+    <span *ngIf='author.errors.required'>Author is required</span>
+    <span *ngIf='author.errors.minlength'>Author must be at least 1 character</span>
+  </div><br>
+  <input id="submit" type="submit" value="Add Quote"
+  [disabled]='!regForm.valid'>
+</form>
+<div class='app-list'>
+  <app-list
+    [quoteList]='quotes'
+    (votingUp)='voteUp($event)'
+    (votingDown)='voteDown($event)'
+    (deleting)='delete($event)'
+  ></app-list>
+</div>
